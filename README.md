@@ -3,7 +3,7 @@
 * [How to Study](#how-to-study)
   * [index.html](#indexhtml)
 * What to Study
-  * [Literals to Classes](./literals-to-classes)
+  * [Literals to Class](./literals-to-class)
 * [Reviewing Your Work](#reviewing-your-work)
   * [review.js](#reviewjs)
   * [REVIEW.md](#reviewmd)
