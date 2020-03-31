@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf8'>
+  <title>es6-classes</title>
+  <script id='in-debugger'>
+    const inDebugger = async (id) => {
+      let code;
+      try {
+        const res = await fetch(id);
+        code = await res.text();
+      } catch (err) {
+        console.log(err);
+        return err;
+      };
+      console.log('--- ' + id + ' ----');
+      const stepThrough = eval;
+      stepThrough("debugger; // injected by inDebugger\n\n" + code);
+      return { id, code };
+    }
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <h1 id='top'>es6-classes</h1>
+    <h2>literals-to-class/</h2>
+  </header>
+
+  <br>
+
+  <li><a href="../index.html">../index.html</a></li>
+
+  <br>
+  <hr>
+
+  <section id="./challenge-1.js">
+    <h2>challenge-1.js</h2>
+    <button onclick="inDebugger('./challenge-1.js')">step through in debugger</button>
+    <br>
+  </section>
+  <br>
+
+  <hr>
+
+  <section id="./challenge-2.js">
+    <h2>challenge-2.js</h2>
+    <button onclick="inDebugger('./challenge-2.js')">step through in debugger</button>
+    <br>
+  </section>
+  <br>
+
+  <hr>
+
+  <section id="./challenge-3.js">
+    <h2>challenge-3.js</h2>
+    <button onclick="inDebugger('./challenge-3.js')">step through in debugger</button>
+    <br>
+  </section>
+  <br>
+
+  <hr>
+
+  <section id="./challenge-4.js">
+    <h2>challenge-4.js</h2>
+    <button onclick="inDebugger('./challenge-4.js')">step through in debugger</button>
+    <br>
+  </section>
+  <br>
+
+  <hr>
+
+  <section id="./example.js">
+    <h2>example.js</h2>
+    <button onclick="inDebugger('./example.js')">step through in debugger</button>
+    <br>
+  </section>
+  <br>
+
+</body>
+
+</html>
