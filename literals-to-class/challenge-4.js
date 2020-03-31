@@ -45,7 +45,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('addString') && !instanceA.hasOwnProperty('all');
 const test3b = !instanceB.hasOwnProperty('addString') && !instanceB.hasOwnProperty('all');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = JSON.stringify(instanceA.state) === '{"evens":["2",""],"odds":["3"],"nanys":["e"]}';

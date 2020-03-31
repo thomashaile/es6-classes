@@ -1,6 +1,6 @@
 # es6-classes/
 
-> 3/31/2020, 3:14:16 PM 
+> 3/31/2020, 3:20:57 PM 
 
 ## literals-to-class/ - error
 
@@ -78,7 +78,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('evens') && !instanceA.hasOwnProperty('odds');
 const test3b = !instanceB.hasOwnProperty('evens') && !instanceB.hasOwnProperty('odds');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = instanceA.evens.toString() === '0,-2,2';
@@ -119,7 +119,7 @@ console.assert(test7b, 'Test 7.B');
 + PASS: Test 1.B 
 - FAIL: Test 2.A - own properties
 - FAIL: Test 2.B
-+ PASS: Test 3.A - inherited properties
++ PASS: Test 3.A - not-own properties
 + PASS: Test 3.B
 TypeError: Cannot read property 'max' of undefined
     at Object.<anonymous> ( [...] /literals-to-class/challenge-2.js:54:32)
@@ -185,7 +185,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('spread') && !instanceA.hasOwnProperty('addNumber');
 const test3b = !instanceB.hasOwnProperty('spread') && !instanceB.hasOwnProperty('addNumber');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = instanceA.state.max === -Infinity && instanceA.state.min === Infinity;
@@ -232,7 +232,7 @@ console.assert(test8b, 'Test 8.B');
 + PASS: Test 1.B 
 - FAIL: Test 2.A - own properties
 - FAIL: Test 2.B
-+ PASS: Test 3.A - inherited properties
++ PASS: Test 3.A - not-own properties
 + PASS: Test 3.B
 - FAIL: Test 4.A - initial values
 - FAIL: Test 4.B
@@ -311,7 +311,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('write') && !instanceA.hasOwnProperty('read') && !instanceA.hasOwnProperty('remove');
 const test3b = !instanceB.hasOwnProperty('write') && !instanceB.hasOwnProperty('read') && !instanceB.hasOwnProperty('remove');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = JSON.stringify(instanceA.entries) === '{"a":1,"b":2}';
@@ -419,7 +419,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('addString') && !instanceA.hasOwnProperty('all');
 const test3b = !instanceB.hasOwnProperty('addString') && !instanceB.hasOwnProperty('all');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = JSON.stringify(instanceA.state) === '{"evens":["2",""],"odds":["3"],"nanys":["e"]}';
@@ -485,7 +485,7 @@ console.assert(test11b, 'Test 11.B');
 + PASS: Test 1.B
 + PASS: Test 2.A - own properties
 + PASS: Test 2.B
-+ PASS: Test 3.A - inherited properties
++ PASS: Test 3.A - not-own properties
 + PASS: Test 3.B
 + PASS: Test 4.A - render
 + PASS: Test 4.B
@@ -555,7 +555,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('render') && !instanceA.hasOwnProperty('coordinates');
 const test3b = !instanceB.hasOwnProperty('render') && !instanceB.hasOwnProperty('coordinates');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = instanceA.render() === '( X: 4, Y: 2 )';

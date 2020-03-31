@@ -57,7 +57,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('render') && !instanceA.hasOwnProperty('coordinates');
 const test3b = !instanceB.hasOwnProperty('render') && !instanceB.hasOwnProperty('coordinates');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = instanceA.render() === '( X: 4, Y: 2 )';

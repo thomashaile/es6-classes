@@ -59,7 +59,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('write') && !instanceA.hasOwnProperty('read') && !instanceA.hasOwnProperty('remove');
 const test3b = !instanceB.hasOwnProperty('write') && !instanceB.hasOwnProperty('read') && !instanceB.hasOwnProperty('remove');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = JSON.stringify(instanceA.entries) === '{"a":1,"b":2}';

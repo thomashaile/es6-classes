@@ -41,7 +41,7 @@ console.assert(test2b, 'Test 2.B');
 
 const test3a = !instanceA.hasOwnProperty('evens') && !instanceA.hasOwnProperty('odds');
 const test3b = !instanceB.hasOwnProperty('evens') && !instanceB.hasOwnProperty('odds');
-console.assert(test3a, 'Test 3.A - inherited properties');
+console.assert(test3a, 'Test 3.A - not-own properties');
 console.assert(test3b, 'Test 3.B');
 
 const test4a = instanceA.evens.toString() === '0,-2,2';
