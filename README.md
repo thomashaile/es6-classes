@@ -16,7 +16,7 @@ All of the exercises & examples in this repository are plain JS files that will 
 
 ### `index.html`
 
-Each directory in this repository contains an `index.html` file.  To step through the code in your browser's debugger or JS Tutor, open one of the `index.html` files with `liveServer`.  The live page will have a button for each javascript file in this repository.  One button will load the most recent code from VSC in the debugger, the other button will open the most recent code in a new JS Tutor tab.
+Each directory in this repository contains an `index.html` file.  To step through the code in your browser's debugger or JS Tutor, open one of the `index.html` files with `liveServer`.  The live page will have a button for each javascript file in this repository.  This button will load the most recent code for that exercise in the debugger.
 
 Happy studying!
 
