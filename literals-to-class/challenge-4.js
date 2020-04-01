@@ -31,6 +31,10 @@ const literal2 = {
 // the solution
 
 
+// these lines are correct! don't change them
+const instanceA = new Stringanizer(['3', '', 'e', '2']);
+const instanceB = new Stringanizer(['5', '!', '-0']);
+
 // the tests
 
 const test1a = instanceA instanceof Stringanizer;
