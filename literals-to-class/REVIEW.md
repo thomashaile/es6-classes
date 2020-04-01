@@ -1,6 +1,6 @@
 # es6-classes/
 
-> 3/31/2020, 3:20:57 PM 
+> 4/1/2020, 11:40:00 AM 
 
 ## literals-to-class/ - error
 
@@ -8,7 +8,7 @@
 
 ### files
 
-* [challenge-1.js](#challenge-1js---error) - error
+* [challenge-1.js](#challenge-1js---pass) - pass
 * [challenge-2.js](#challenge-2js---error) - error
 * [challenge-3.js](#challenge-3js---error) - error
 * [challenge-4.js](#challenge-4js---error) - error
@@ -16,22 +16,25 @@
 
 ---
 
-## challenge-1.js - error
+## challenge-1.js - pass
 
 * [review source](challenge-1.js)
 
 ```txt
-ReferenceError: _ is not defined
-    at Object.<anonymous> ( [...] /literals-to-class/challenge-1.js:27:19)
-    at Module._compile (internal/modules/cjs/loader.js:777:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
-    at Module.load (internal/modules/cjs/loader.js:643:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
-    at Module.require (internal/modules/cjs/loader.js:683:19)
-    at require (internal/modules/cjs/helpers.js:16:16)
-    at evaluateFile ( [...] /review.js:101:5)
-    at  [...] /review.js:139:28
-    at Array.map (<anonymous>)
++ PASS: Test 1.A - instanceof
++ PASS: Test 1.B 
++ PASS: Test 2.A - own properties
++ PASS: Test 2.B
++ PASS: Test 3.A - not-own properties
++ PASS: Test 3.B
++ PASS: Test 4.A - evens
++ PASS: Test 4.B
++ PASS: Test 5.A - odds
++ PASS: Test 5.B
++ PASS: Test 6.A - evens
++ PASS: Test 6.B
++ PASS: Test 7.A - odds
++ PASS: Test 7.B
 ```
 
 ```js
@@ -59,10 +62,27 @@ const literalB = {
 
 // the solution
 
-class EvenOdd { };
+// class EvenOdd { };
 
-const instanceA = _;
-const instanceB = _;
+// const instanceA = _;
+// const instanceB = _;
+
+
+class EvenOdd {
+  numbers = [];
+  constructor(numbers) {
+    this.numbers = numbers;
+  }
+  get evens() {
+    return this.numbers.filter(num => num % 2 === 0);
+  }
+  get odds() {
+    return this.numbers.filter(num => num % 2 !== 0);
+  }
+};
+
+const instanceA = new EvenOdd([0, -2, 2, - 1, 1]);
+const instanceB = new EvenOdd([6, -4, 3, 67, -21]);
 
 // the tests
 
@@ -143,7 +163,7 @@ const literalA = {
     min: Infinity
   },
   get spread() {
-    return this.state.min - this.state.min;
+    return this.state.max - this.state.min;
   },
   addNumber(newNum) {
     // ... code ...
@@ -156,7 +176,7 @@ const literalB = {
     min: Infinity
   },
   get spread() {
-    return this.state.min - this.state.min;
+    return this.state.max - this.state.min;
   },
   addNumber(newNum) {
     // ... code ...
@@ -358,8 +378,8 @@ console.assert(test8b, 'Test 8.B');
 * [review source](challenge-4.js)
 
 ```txt
-ReferenceError: instanceA is not defined
-    at Object.<anonymous> ( [...] /literals-to-class/challenge-4.js:36:16)
+ReferenceError: Stringanizer is not defined
+    at Object.<anonymous> ( [...] /literals-to-class/challenge-4.js:35:19)
     at Module._compile (internal/modules/cjs/loader.js:777:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
     at Module.load (internal/modules/cjs/loader.js:643:32)
@@ -404,6 +424,10 @@ const literal2 = {
 
 // the solution
 
+
+// these lines are correct! don't change them
+const instanceA = new Stringanizer(['3', '', 'e', '2']);
+const instanceB = new Stringanizer(['5', '!', '-0']);
 
 // the tests
 
