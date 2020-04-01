@@ -6,7 +6,7 @@ const literalA = {
     min: Infinity
   },
   get spread() {
-    return this.state.min - this.state.min;
+    return this.state.max - this.state.min;
   },
   addNumber(newNum) {
     // ... code ...
@@ -19,7 +19,7 @@ const literalB = {
     min: Infinity
   },
   get spread() {
-    return this.state.min - this.state.min;
+    return this.state.max - this.state.min;
   },
   addNumber(newNum) {
     // ... code ...
