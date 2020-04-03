@@ -1,5 +1,5 @@
 const CONFIG = {
-  user: 'hackyourfuturebelgium',
+  user: 'thomashaile',
   repo: 'es6-classes',
   root: process.argv[2] || './',
   ignore: ['.git', 'review.js', 'node_modules'],
