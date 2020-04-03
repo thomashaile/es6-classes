@@ -1,41 +1,95 @@
 // the challenge
 
 const literal1 = {
-  state: {
-    evens: [],
-    odds: [],
-    nanys: []
-  },
-  addString: function (newStr) {
-    // ... code ...
-  },
-  all: function (selection) {
-    // ... code ...
-  }
+    state: {
+        evens: [],
+        odds: [],
+        nanys: []
+    },
+    addString: function(newStr) {
+        // ... code ...
+
+
+        if (!isNaN(newStr)) {
+            if (newStr % 2 === 0) {
+                this.state.evens.push(newStr);
+            } else {
+                this.state.odds.push(newStr);
+            }
+        } else {
+            this.state.nanys.push(newStr);
+        }
+    },
+    all: function(selection) {
+        // ... code ...
+        return this.state[selection];
+    }
 };
 
 const literal2 = {
-  state: {
-    evens: [],
-    odds: [],
-    nanys: []
-  },
-  addString: function (newStr) {
-    // ... code ...
-  },
-  all: function (selection) {
-    // ... code ...
-  }
+    state: {
+        evens: [],
+        odds: [],
+        nanys: []
+    },
+    addString: function(newStr) {
+        // ... code ...
+
+
+        if (!isNaN(newStr)) {
+            if (newStr % 2 === 0) {
+                this.state.evens.push(newStr);
+            } else {
+                this.state.odds.push(newStr);
+            }
+        } else {
+            this.state.nanys.push(newStr);
+        }
+    },
+    all: function(selection) {
+
+        return this.state[selection];
+    }
 };
 
 // the solution
+class Stringanizer {
+    state = {
+        evens: [],
+        odds: [],
+        nanys: []
+    };
+    constructor(evens, odds, nanys) {
+
+        this.state.evens = evens;
+        this.state.odds = odds;
+        this.state.nanys = nanys;
+    }
+    addString(newStr) {
+        // ... code ...
 
 
-// these lines are correct! don't change them
-const instanceA = new Stringanizer(['3', '', 'e', '2']);
-const instanceB = new Stringanizer(['5', '!', '-0']);
+        if (!isNaN(newStr)) {
+            if (newStr % 2 === 0) {
+                this.state.evens.push(newStr);
+            } else {
+                this.state.odds.push(newStr);
+            }
+        } else {
+            this.state.nanys.push(newStr);
+        }
+    };
+    all(selection) {
+        // ... code ...
+        return this.state[selection];
+    }
+
+}
 
 // the tests
+debugger;
+const instanceA = new Stringanizer(["2", ""], ["3"], ["e"]);
+const instanceB = new Stringanizer(["-0"], ["5"], ["!"]);
 
 const test1a = instanceA instanceof Stringanizer;
 const test1b = instanceB instanceof Stringanizer;
