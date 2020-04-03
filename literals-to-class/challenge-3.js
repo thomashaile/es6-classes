@@ -1,45 +1,71 @@
 // the challenge
 
 const literalA = {
-  entries: {
-    x: '123',
-    sa: 67
-  },
-  write: function (key, value) {
-    // ... code ...
-  },
-  read: function (key) {
-    if (this.entries.hasOwnProperty(key)) {
-      // ... code ...
-    } else {
-      // ... code ...
+    entries: {
+        x: '123',
+        sa: 67
+    },
+    write: function(key, value) {
+        // ... code ...
+        this.entries[key] = value;
+    },
+    read: function(key) {
+        if (this.entries.hasOwnProperty(key)) {
+            // ... code ...
+            return this.entries[key];
+        } else {
+            // ... code ...
+            return false;
+        }
+    },
+    remove: function(key) {
+        if (this.entries.hasOwnProperty(key)) {
+            // ... code ...
+            return delete this.entries[key];
+        } else {
+            // ... code ...
+            return false;
+        }
     }
-  },
-  remove: function (key) {
-    if (this.entries.hasOwnProperty(key)) {
-      // ... code ...
-    } else {
-      // ... code ...
-    }
-  }
 };
 
 const literalB = {
-  entries: {
-    chico: 'marx',
-    gummo: 'marx',
-    harpo: 'marx',
-    groucho: 'marx',
-    zeppo: 'marx',
-  },
-  write: function (key, value) { },
-  read: function (key) { },
-  remove: function (key) { }
+    entries: {
+        chico: 'marx',
+        gummo: 'marx',
+        harpo: 'marx',
+        groucho: 'marx',
+        zeppo: 'marx',
+    },
+    write: function(key, value) {},
+    read: function(key) {},
+    remove: function(key) {}
 };
 
-// the solution
+//the solution
+class EntriesManager {
+    entries = {}
+    constructor(elements) {
+        if (elements != null) {
+            Object.keys(elements).forEach((key) => {
+                this.entries[key] = elements[key]
+            })
+        }
+    };
 
-class EntriesManager { };
+    write(key, value) {
+        this.entries[key] = value;
+    }
+    read(key) {
+        if (this.entries.hasOwnProperty(key)) { return this.entries[key]; }
+        throw new Error(`no key: ${key}`);
+    }
+    remove(key) {
+        if (this.entries.hasOwnProperty(key)) { return delete this.entries[key]; }
+
+        return false;
+    }
+};
 
 // these two lines are correct!  don't change them
 const instanceA = new EntriesManager({ a: 1, b: 2 });
@@ -77,10 +103,10 @@ console.assert(test5b, 'Test 5.B');
 const test6a = instanceA.read('b') === 2;
 let test6b;
 try {
-  instanceB.read('b');
-  test6b = false;
+    instanceB.read('b');
+    test6b = false;
 } catch (err) {
-  test6b = err.message === 'no key: b';
+    test6b = err.message === 'no key: b';
 }
 console.assert(test6a, 'Test 6.A - read');
 console.assert(test6b, 'Test 6.B');
